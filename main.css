@@ -17,8 +17,8 @@ body,html{
     height: 200px;
     width:748px;
     background-color: red;
-    display:inline-block;
-
+    display:block;
+    float: left;
 }
 
 .right{
@@ -51,16 +51,109 @@ body,html{
     padding:12px;
     height:32px ;
     width:720px;
+    border-bottom:2px double black;
 }
 
 .write{
     width: 100%;
     height: 100%;
+    padding-left: 10px;
 }
 
 input{
-    box-sizing: border-box;
-
-
+    width:600px;
+    height: 26px;
+    border-width: 2px;
+    padding: 1px;;
 }
+
+.addbutton{
+    width:100px;
+    height: 32px;
+    border: 2px double black;
+}
+
+.product{
+    width:744px;
+    height: 44px;
+    border-bottom:2px double black;
+}
+
+.nazva{
+    padding:10px;
+    display:inline-block;
+    width: 100px;
+    height:24px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.amount{
+    padding-left: 200px;
+    display: inline-block;
+    width:250px;
+    height: 44px;
+}
+
+.number{
+    margin-left: 7px;
+    margin-right: 7px;
+    text-align: center;
+    padding:5px 5px 0px 5px;
+    width:30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.plus{
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+}
+
+.minus{
+
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.buybutton{
+    display: inline-block;
+    width: 154px;
+}
+
+.delete{
+    width: 38px;
+    height: 38px;
+}
+
+.bought{
+    margin-right: 10px;
+    width: 90px;
+    height: 30px;
+}
+
+.nodownbord{
+    border-bottom: 0;
+}
+
+.out{
+    width:304px;
+    height: 196px;
+
+    background-color: white;
+    border: 2px double black;
+    border-radius: 20px;
+}
+
+.textleft{
+    padding:20px;
+    width: 264px;
+    height: 20px;
+    border-bottom: 2px double black;
+}
+
 
