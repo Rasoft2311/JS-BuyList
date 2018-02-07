@@ -6,194 +6,176 @@
 }
 
 body, html {
+    padding:0;
+    margin:0;
     height: 100%;
-    background-color: #ececec;
+    background-color: #c6c6c6;
 }
 
 .left {
-    padding: 11px;
-    height: 200px;
-    width: 748px;
+    width: 64%;
     display: block;
     float: left;
+    padding:2%;
 }
 
 .right {
-
-    padding: 11px;
-    height: 200px;
-    width: 308px;
+    width: 28%;
     display: inline-block;
-
+    padding:2%;
 }
 
 .center {
-    width: 1100px;
-    height: 222px;
+    max-width: 1100px;
     margin: auto;
-}
-
-.buy {
-    width: 744px;
-    height: 196px;
-
-    background-color: white;
-    border: 2px double black;
-    border-radius: 20px;
-}
-
-.add {
-    padding: 12px;
-    height: 32px;
-    width: 720px;
-    border-bottom: 2px double black;
-}
-
-.write {
-    width: 100%;
-    height: 100%;
-    padding-left: 10px;
-}
-
-input {
-    width: 600px;
-    height: 26px;
-    border-width: 2px;
-    padding: 1px;;
-}
-
-.addbutton {
-    width: 100px;
-    height: 32px;
-    border: 2px double black;
-}
-
-.product {
-    width: 744px;
-    height: 44px;
-    border-bottom: 2px double black;
-}
-
-.nazva {
-    padding: 10px;
-    display: inline-block;
-    width: 100px;
-    height: 24px;
-    text-align: center;
-    vertical-align: top;
-}
-
-.amount {
-    padding-left: 200px;
-    display: inline-block;
-    width: 250px;
-    height: 44px;
-}
-
-.number {
-    margin-left: 7px;
-    margin-right: 7px;
-    text-align: center;
-    padding: 5px 5px 0px 5px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    vertical-align: bottom;
-}
-
-.plus {
-    display: inline-block;
-
-    width: 30px;
-    height: 30px;
-}
-
-.minus {
-
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-}
-
-.buybutton {
-    display: inline-block;
-    width: 154px;
-}
-
-.delete {
-    width: 38px;
-    height: 38px;
-    background-color: red;
-}
-
-.bought {
-    margin-right: 10px;
-    width: 90px;
-    height: 30px;
-}
-
-.nodownbord {
-    border-bottom: 0;
-}
-
-.out {
-    width: 304px;
-    height: 196px;
-
-    background-color: white;
-    border: 2px double black;
-    border-radius: 20px;
-}
-
-.textleft {
-    font-size: 25px;
-    padding: 15px;
-    width: 274px;
-    height: 30px;
-    border-bottom: 2px double black;
-}
-
-.whatsleft {
-    width: 304px;
-    height: 60px;
-    border-bottom: 2px double black;
-}
-
-.tomato {
-
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    padding: 4px 10px 10px 4px;
 
 }
 
-.cheese {
-    display: inline-block;
-}
-
-.pech {
-    display: inline-block;
-}
-
-.inner {
-    width: 90px;
-    height: 38px;
-    border: 1px double black;
+.table-left{
+    background:white;
     border-radius: 10px;
-    background-color: #ececec;;
+    border: 2px double black;
 }
 
-.vertic {
-    display: inline-block;
-}
 
-.red {
+.table-right{
+    background:white;
     border-radius: 10px;
-    background-color: orange;
-    width: 18px;
-    text-align: center;
+    border: 2px double black;
+}
+
+
+.add{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    border-bottom: 2px double black;
+    display:flex;
+}
+
+.clearfix::after	{
+    visibility:	hidden;
+    display:	block;
+    content:	"";
+    height:	0;
+    clear:	both;
+}
+
+.text{
+    height:30px;
+    width:80%;
+}
+
+.addbutton{
+    height:36px;
+    width:19%;
+}
+
+.product{
+    border-bottom:2px double black;
+    align-items:center;
+    display:flex;
+    padding: 5px 15px;
+    justify-content:space-between;
+}
+
+.product:last-child{
+    border-bottom:0;
+}
+
+
+
+.nazva{
+    flex-basis:100px;
+    font-size:20px;
+}
+
+.amount{
+    flex-basis:125px;
+    justify-content:space-around;
+    display:flex;
+}
+
+.deladd{
+    border-radius:40px;
+    height:36px;
+    width:36px;
+}
+
+.number{
+    align-self:center;
+    background-color:blue;
+    padding:5px 10px;
+    text-align:center;
+    self-align:center;
 
 }
+
+.buybutton{
+    flex-basis:150px;
+}
+
+.bought{
+
+    width:70%;
+    height:36px;
+}
+
+.delete{
+    height:36px;
+    width:36px;
+}
+
+.textleft{
+    padding:10px 5px;
+    border-bottom:2px double black;
+    font-size:20px;
+}
+
+.textleft:last-child{
+    border-bottom:0;
+}
+
+.whatssold{
+    height:20px;
+}
+
+
+.whatsleft{
+    padding:10px 10px;
+    display:flex;
+    border-bottom:2px double black;
+    flex-wrap:wrap;
+}
+
+.leftprod{
+    background:#c6c6c6;
+    border:2px double black;
+    display:flex;
+    margin-right:10px;
+    margin-top:2px;
+    font-size:15px;
+    padding:5px;
+    border-radius:5px;
+}
+
+.vertic{
+
+}
+
+.red{
+    margin-left:2px;
+    padding: 0 3px;
+    border-radius:5px;
+    background-color:yellow;
+
+}
+
+
+
+
+
+
 
 
