@@ -19,49 +19,29 @@
                 </div>
 
 
-                <div class="product">
-                    <span class="name">Помідори</span>
+                <div class="template">
+                <div class="product unbought">
+                    <div class="namePlace">
+                        <span class="name"></span>
+                        <div> <input type="text" class="changeProductName" placeholder="Назва товару"></div>
+
+
+                    </div>
+
+
                     <div class="amount">
                         <button class="deladd minus" data-tooltip="decrease number of this product">-</button>
                         <span class="number">1</span>
                         <button class="deladd plus" data-tooltip="increase number of this product">+</button>
                     </div>
                     <div class="buybutton">
-                        <button class="bought" data-tooltip="already bought">Куплено</button>
+                        <button class="buyProduct" data-tooltip="already bought">Куплено</button>
                         <button class="delete" data-tooltip="delete this purchase">x</button>
-
+                        <div><button class="notBought" data-tooltip="unbought">Не куплено</button></div>
                     </div>
+
 
                 </div>
-
-                <div class="product">
-                    <span class="name">Печиво</span>
-                    <div class="amount">
-                        <button class="deladd minus" data-tooltip="decrease number of this product">-</button>
-                        <span class="number">1</span>
-                        <button class="deladd plus" data-tooltip="increase number of this product">+</button>
-                    </div>
-                    <div class="buybutton">
-                        <button class="bought" data-tooltip="already bought">Куплено</button>
-                        <button class="delete" data-tooltip="delete this purchase">x</button>
-
-                    </div>
-
-                </div>
-
-                <div class="product nodownbord">
-                    <span class="name">Сир</span>
-                    <div class="amount">
-                        <button class="deladd minus" data-tooltip="decrease number of this product">-</button>
-                        <span class="number">1</span>
-                        <button class="deladd plus" data-tooltip="increase number of this product">+</button>
-                    </div>
-                    <div class="buybutton">
-                        <button class="bought" data-tooltip="already bought">Куплено</button>
-                        <button class="delete" data-tooltip="delete this purchase">x</button>
-
-                    </div>
-
                 </div>
 
 
@@ -112,13 +92,22 @@
 
             </div>
         </div>
+
     </div>
 </div>
 
 <div class="bage">
-   <span>Buy List</span>
-    <span class="creator">Created by:</span><br/><span class="myname">Daniel Taran</span>
+   <span class="title">Buy List</span>
+    <span class="creator">Created by:</span>
+    <span class="myname">Daniel Taran</span>
 </div>
+
+
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js">  </script>
+
+<script src="first.js"></script>
+
 
 
 </body>

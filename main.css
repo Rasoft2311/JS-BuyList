@@ -80,13 +80,37 @@ body, html {
     justify-content:space-between;
 }
 
+.product.unbought .changeProductName{
+display: none;
+}
+
+.product.unbought .notBought{
+    display: none;
+}
+
+.product.bought .deladd{
+    display:none;
+}
+
+.product.bought .buyProduct{
+    display:none;
+}
+
+.product.bought .delete{
+    display:none;
+}
+
+
+
+.template{display:none}
+
 .product:last-child{
     border-bottom:0;
 }
 
 
 
-.name{
+.namePlace{
     flex-basis:100px;
     font-size:20px;
 }
@@ -125,7 +149,7 @@ body, html {
     flex-basis:150px;
 }
 
-.bought{
+.buyProduct{
 
     width:70%;
     height:36px;
@@ -225,12 +249,26 @@ line-height: 20px;
 }
 
 @media	print	{
+
+
     .bage{
         bottom:0px;
         background-color: white;
         border:2px solid purple;
         height:50px;
+
     }
+
+    .bage .title{
+        display:none;
+    }
+
+    .bage span{
+        font-size: 20px;
+        line-height: 20px;
+
+    }
+
 }
 
 button{
@@ -257,9 +295,9 @@ button::after{
 
 button:hover::after{
     transform:scaleY(1);
-
-
 }
+
+
 
 
 
