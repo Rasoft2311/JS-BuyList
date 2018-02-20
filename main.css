@@ -80,8 +80,22 @@ body, html {
     justify-content:space-between;
 }
 
-.product.unbought .changeProductName{
+.changeProductName{
 display: none;
+    width:100px;
+}
+
+.changeProductName input{
+    width:100px;
+}
+
+.changeActive{
+display:block;
+}
+
+.changePassive{
+display:none;
+
 }
 
 .product.unbought .notBought{
@@ -113,9 +127,17 @@ display: none;
 
 
 .namePlace{
-    flex-basis:100px;
+    width:100px;
     font-size:20px;
 }
+
+.myName{
+width:175px;
+    overflow: auto;
+
+}
+
+
 
 .amount{
     flex-basis:125px;

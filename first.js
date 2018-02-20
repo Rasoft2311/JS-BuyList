@@ -75,12 +75,31 @@ $(function(){
         });
 
         $product.find(".deladd.minus").click(function(){
-
             var currentAmount  = +$amount.text();
             $amount.text(--currentAmount);
-
-
             refreshRight();
+        });
+
+
+        var $text = $product.find(".name");
+        var $inputText = $product.find(".changeProductName");
+
+
+        $product.find(".name").click(function () {
+        $text.addClass("changePassive");
+        $inputText.addClass("changeActive");
+            $inputText.find("input").val($text.text());
+            $product.find(".changeProductName input").focus();
+
+
+            $product.find(".changeProductName input").focusout(function () {
+                var inputVal=$inputText.find("input").val();
+                $text.text(inputVal);
+                $text.removeClass("changePassive");
+                $inputText.removeClass("changeActive");
+                refreshRight();
+            });
+
 
 
         });
