@@ -46,10 +46,7 @@ body, html {
 
 
 .add{
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:10px;
-    padding-right:10px;
+    padding:10px;
     border-bottom: 1px solid #c6c6c6;
     display:flex;
 }
@@ -316,6 +313,7 @@ button{
 }
 
 button::after{
+    transform-origin: 0 100%;
     opacity: 1 !important;
     transform:scaleY(0);
     position: absolute;
