@@ -138,6 +138,10 @@ display: none;
     background-color:red;
 }
 
+.disabled{
+    opacity: 0.6;
+}
+
 .number{
     align-self:center;
     background-color:blue;
@@ -157,6 +161,12 @@ display: none;
     height:36px;
 }
 
+.notBought{
+    width:95%;
+    height:36px;
+
+}
+
 .delete{
     height:36px;
     width:36px;
@@ -173,7 +183,11 @@ display: none;
 }
 
 .whatssold{
-    min-height:20px;
+    min-height:10px;
+    padding:10px 10px;
+    display:flex;
+    border-bottom: 1px solid #c6c6c6;
+    flex-wrap:wrap;
 }
 
 
@@ -280,6 +294,7 @@ button{
 }
 
 button::after{
+    opacity: 1 !important;
     transform:scaleY(0);
     position: absolute;
     content: attr(data-tooltip);

@@ -68,6 +68,23 @@ $(function(){
             refreshRight();
         });
 
+        $product.find(".deladd.plus").click(function(){
+            var currentAmount  = +$amount.text();
+            $amount.text(++currentAmount);
+            refreshRight();
+        });
+
+        $product.find(".deladd.minus").click(function(){
+
+            var currentAmount  = +$amount.text();
+            $amount.text(--currentAmount);
+
+
+            refreshRight();
+
+
+        });
+
 
 
         $productList.append($product);
@@ -79,6 +96,13 @@ $(function(){
     addProduct("Помідори");
     addProduct("Печиво");
     addProduct("Сир");
+
+
+
+    $(".addbutton").click(function(){
+       addProduct($(".text").val());
+
+    });
 
 
 
