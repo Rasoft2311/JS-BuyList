@@ -51,6 +51,8 @@ $(function(){
         var $amount = $product.find(".number");
         $amount.text(amount);
 
+        $product.find(".deladd.minus").attr("disabled","true");
+
         $product.find(".buyProduct").click(function(){
         $product.removeClass("unbought");
         $product.addClass("bought");
@@ -69,15 +71,18 @@ $(function(){
         });
 
         $product.find(".deladd.plus").click(function(){
+
             var currentAmount  = +$amount.text();
             $amount.text(++currentAmount);
             refreshRight();
+            if(+$amount.text()>=1) $product.find(".deladd.minus").removeAttr("disabled");
         });
 
         $product.find(".deladd.minus").click(function(){
             var currentAmount  = +$amount.text();
             $amount.text(--currentAmount);
             refreshRight();
+            if(+$amount.text()===1) $product.find(".deladd.minus").attr("disabled","true");
         });
 
 
@@ -121,8 +126,10 @@ $(function(){
     $(".addbutton").click(function(){
         if($inputText.val()!=="") {
             addProduct($(".text").val());
-
+            $inputText.val("");
+            $(".text").focus();
         }
+
 
     });
 
