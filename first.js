@@ -8,6 +8,14 @@ $(function(){
     var $rightUnbought = $(".whatsleft");
     var $rightBought=$(".whatssold");
 
+    function editAnimated($item, fn){
+        $item.fadeOut(200,function(){
+            fn();
+            $item.fadeIn(200);
+        });
+
+    }
+
 
     function refreshRight(){
 
@@ -22,10 +30,14 @@ $(function(){
                 var rightProduct = $(rightTemplate);
                 var amount = $item.find(".number").text();
                 var name = $item.find(".name").text();
-                rightProduct.find(".vertic").text(name);
-                rightProduct.find(".vertic.red").text(amount);
+                    rightProduct.find(".vertic").text(name);
+                    rightProduct.find(".vertic.red").text(amount);
+                    if($from.hasClass("unbought"))rightProduct.find(".vertic").removeClass("alreadyBought");
+                    if($from.hasClass("bought"))rightProduct.find(".vertic").addClass("alreadyBought");
+                    $to.append(rightProduct);
 
-                $to.append(rightProduct);
+
+
 
             });
 
@@ -38,6 +50,9 @@ $(function(){
 
 
     }
+
+
+
 
 
 
@@ -54,35 +69,55 @@ $(function(){
         $product.find(".deladd.minus").attr("disabled","true");
 
         $product.find(".buyProduct").click(function(){
-        $product.removeClass("unbought");
-        $product.addClass("bought");
-            refreshRight();
+            editAnimated($product,function(){
+                    $product.find(".name").addClass("alreadyBought");
+                    $product.removeClass("unbought");
+                    $product.addClass("bought");
+                refreshRight();
+            });
+
         });
 
         $product.find(".notBought").click(function(){
-            $product.removeClass("bought");
-            $product.addClass("unbought");
-            refreshRight();
+            editAnimated($product,function(){
+                $product.find(".name").removeClass("alreadyBought");
+                    $product.removeClass("bought");
+                    $product.addClass("unbought");
+                refreshRight();
+            });
+
+
+
+
         });
 
         $product.find(".delete").click(function(){
-            $product.remove();
+            $product.slideUp(300,function(){
+                $product.remove();
+            });
+
             refreshRight();
         });
 
         $product.find(".deladd.plus").click(function(){
+            editAnimated($amount,function(){
+                var currentAmount  = +$amount.text();
+                $amount.text(++currentAmount);
+                refreshRight();
+                if(+$amount.text()>=1) $product.find(".deladd.minus").removeAttr("disabled");
+            });
 
-            var currentAmount  = +$amount.text();
-            $amount.text(++currentAmount);
-            refreshRight();
-            if(+$amount.text()>=1) $product.find(".deladd.minus").removeAttr("disabled");
         });
 
         $product.find(".deladd.minus").click(function(){
-            var currentAmount  = +$amount.text();
-            $amount.text(--currentAmount);
-            refreshRight();
-            if(+$amount.text()===1) $product.find(".deladd.minus").attr("disabled","true");
+            editAnimated($amount,function(){
+
+                var currentAmount  = +$amount.text();
+                $amount.text(--currentAmount);
+                refreshRight();
+                if(+$amount.text()===1) $product.find(".deladd.minus").attr("disabled","true");
+            });
+
         });
 
 
@@ -91,19 +126,21 @@ $(function(){
 
 
         $product.find(".name").click(function () {
-        $text.addClass("changePassive");
-        $inputText.addClass("changeActive");
-            $inputText.find("input").val($text.text());
-            $product.find(".changeProductName input").focus();
+                $text.addClass("changePassive");
+                $inputText.addClass("changeActive");
+                $inputText.find("input").val($text.text());
+                $product.find(".changeProductName input").focus();
 
 
-            $product.find(".changeProductName input").focusout(function () {
-                var inputVal=$inputText.find("input").val();
-                $text.text(inputVal);
-                $text.removeClass("changePassive");
-                $inputText.removeClass("changeActive");
-                refreshRight();
-            });
+                $product.find(".changeProductName input").focusout(function () {
+                    var inputVal=$inputText.find("input").val();
+                    $text.text(inputVal);
+                    $text.removeClass("changePassive");
+                    $inputText.removeClass("changeActive");
+                    refreshRight();
+                });
+
+
 
 
 
@@ -112,14 +149,29 @@ $(function(){
 
 
         $productList.append($product);
+        $product.hide();
+        $product.slideDown(300);
+
+
         refreshRight();
     }
 
+    setTimeout(function(){
+        addProduct("Помідори");
+
+    },15);
+
+    setTimeout(function(){
+        addProduct("Печиво");
+
+    },100);
+
+    setTimeout(function(){
+        addProduct("Сир");
+
+    },200);
 
 
-    addProduct("Помідори");
-    addProduct("Печиво");
-    addProduct("Сир");
 
     var $inputText = $(".text");
 
