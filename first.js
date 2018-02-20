@@ -97,11 +97,23 @@ $(function(){
     addProduct("Печиво");
     addProduct("Сир");
 
-
+    var $inputText = $(".text");
 
     $(".addbutton").click(function(){
-       addProduct($(".text").val());
+        if($inputText.val()!=="") {
+            addProduct($(".text").val());
 
+        }
+
+    });
+
+    $(".text").keyup(function(e){
+        if(e.which==13) {
+            if ($inputText.val() !== "") {
+                addProduct($inputText.val());
+                $inputText.val("");
+            }
+        }
     });
 
 
