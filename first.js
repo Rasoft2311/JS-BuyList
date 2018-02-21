@@ -56,66 +56,64 @@ $(function(){
 
 
 
-    function addProduct(name){
+    function addProduct(name) {
 
-        var $product =$(template);
-        var productName=  $product.find(".name");
+        var $product = $(template);
+        var productName = $product.find(".name");
         productName.text(name);
 
         var amount = 1;
         var $amount = $product.find(".number");
         $amount.text(amount);
 
-        $product.find(".deladd.minus").attr("disabled","true");
+        $product.find(".deladd.minus").attr("disabled", "true");
 
-        $product.find(".buyProduct").click(function(){
-            editAnimated($product,function(){
-                    $product.find(".name").addClass("alreadyBought");
-                    $product.removeClass("unbought");
-                    $product.addClass("bought");
+        $product.find(".buyProduct").click(function () {
+            editAnimated($product, function () {
+                $product.find(".name").addClass("alreadyBought");
+                $product.removeClass("unbought");
+                $product.addClass("bought");
                 refreshRight();
             });
 
         });
 
-        $product.find(".notBought").click(function(){
-            editAnimated($product,function(){
+        $product.find(".notBought").click(function () {
+            editAnimated($product, function () {
                 $product.find(".name").removeClass("alreadyBought");
-                    $product.removeClass("bought");
-                    $product.addClass("unbought");
+                $product.removeClass("bought");
+                $product.addClass("unbought");
                 refreshRight();
             });
 
 
-
-
         });
 
-        $product.find(".delete").click(function(){
-            $product.slideUp(300,function(){
+        $product.find(".delete").click(function () {
+            $product.slideUp(300, function () {
                 $product.remove();
             });
 
             refreshRight();
         });
 
-        $product.find(".deladd.plus").click(function(){
-            editAnimated($amount,function(){
-                var currentAmount  = +$amount.text();
+        $product.find(".deladd.plus").click(function () {
+            editAnimated($amount, function () {
+                var currentAmount = +$amount.text();
                 $amount.text(++currentAmount);
                 refreshRight();
-                if(+$amount.text()>=1) $product.find(".deladd.minus").removeAttr("disabled");
+                if (+$amount.text() >= 1) $product.find(".deladd.minus").removeAttr("disabled");
             });
 
         });
 
-        $product.find(".deladd.minus").click(function(){
-            editAnimated($amount,function(){
+        $product.find(".deladd.minus").click(function () {
+            editAnimated($amount, function () {
 
-                var currentAmount  = +$amount.text();
+                var currentAmount = +$amount.text();
                 $amount.text(--currentAmount);
                 refreshRight();
-                if(+$amount.text()===1) $product.find(".deladd.minus").attr("disabled","true");
+                if (+$amount.text() === 1) $product.find(".deladd.minus").attr("disabled", "true");
             });
 
         });
@@ -125,7 +123,12 @@ $(function(){
         var $inputText = $product.find(".changeProductName");
 
 
-        $product.find(".name").click(function () {
+
+
+
+        $text.click(function () {
+            if(!$text.hasClass("alreadyBought")) {
+
                 $text.addClass("changePassive");
                 $inputText.addClass("changeActive");
                 $inputText.find("input").val($text.text());
@@ -133,18 +136,19 @@ $(function(){
 
 
                 $product.find(".changeProductName input").focusout(function () {
-                    var inputVal=$inputText.find("input").val();
+                    var inputVal = $inputText.find("input").val();
                     $text.text(inputVal);
                     $text.removeClass("changePassive");
                     $inputText.removeClass("changeActive");
                     refreshRight();
                 });
-
+            }
 
 
 
 
         });
+
 
 
 
