@@ -127,7 +127,7 @@ $(function(){
 
 
         $text.click(function () {
-            if(!$text.hasClass("alreadyBought")) {
+            if($(this).not(".alreadyBought")) {
 
                 $text.addClass("changePassive");
                 $inputText.addClass("changeActive");
