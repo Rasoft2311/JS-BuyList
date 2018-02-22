@@ -97,24 +97,28 @@ $(function(){
             refreshRight();
         });
 
+
         $product.find(".deladd.plus").click(function () {
-            editAnimated($amount, function () {
-                var currentAmount = +$amount.text();
-                $amount.text(++currentAmount);
+            var amount=+$amount.text()+1;
+            $amount.fadeOut(200,function() {
+                $amount.text(amount);
                 refreshRight();
                 if (+$amount.text() >= 1) $product.find(".deladd.minus").removeAttr("disabled");
+                $amount.fadeIn(200);
+
             });
 
         });
 
         $product.find(".deladd.minus").click(function () {
-            editAnimated($amount, function () {
-
-                var currentAmount = +$amount.text();
-                $amount.text(--currentAmount);
+            var amount=+$amount.text()-1;
+            $amount.fadeOut(200,function() {
+                $amount.text(amount);
                 refreshRight();
-                if (+$amount.text() === 1) $product.find(".deladd.minus").attr("disabled", "true");
+                if (+$amount.text() <= 1) $product.find(".deladd.minus").attr("disabled", "true");
+                $amount.fadeIn(200);
             });
+
 
         });
 
